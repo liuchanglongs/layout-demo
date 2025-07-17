@@ -1,0 +1,85 @@
+<!--
+ * @Author: lcl
+ * @Date: 2025/7/16
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .homepage {
+        height: 100vh;
+        width: 100vw;
+        background: url("./background-img.png") no-repeat;
+        background-size: cover;
+        background-position: top;
+        position: relative;
+    }
+
+    .homepage2 {
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        background: url("./background-img2.png") no-repeat;
+        background-position: top;
+        background-size: cover;
+        text-align: center;
+        color: #ffffff;
+        position: absolute;
+        z-index: 555;
+
+    }
+
+    .hero-banner {
+        /* position: relative; */
+        background-image: url('./image.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 176px;
+        height: 252px;
+    }
+
+    .test {
+        z-index: 5555;
+        /* 设置层级 */
+        /* position: relative;
+        z-index: 66666; */
+    }
+
+    /* .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    } */
+
+    .title,
+    .subtitle {
+        /* position: relative; */
+        /* z-index: 2; */
+        /* 确保文字在遮罩上方 */
+        /* color: #ffffff; */
+    }
+</style>
+
+<body>
+    <div class="homepage">
+        <div class="test">5555</div>
+        <div class="homepage2">
+        </div>
+    </div>
+</body>
+
+</html>

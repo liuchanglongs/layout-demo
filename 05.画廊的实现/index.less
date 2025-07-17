@@ -1,0 +1,384 @@
+.homepage {
+  height: 100vh;
+  width: 100vw;
+  background: url("./img/background-img.png") no-repeat;
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  user-select: none;
+  z-index: 99;
+  overflow: hidden;
+  .homepage2 {
+    height: 100%;
+    position: relative;
+    z-index: 100;
+    &::before {
+      content: ""; /* 必须添加content属性 */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(255, 255, 255);
+      background: url("./img/background-img2.png") no-repeat;
+      background-position: top;
+      background-size: cover;
+      z-index: 99;
+    }
+    .header {
+      height: 62px;
+      text-align: center;
+      color: #ffffff;
+      font-weight: 700;
+      text-shadow: 0px 4px 10px rgba(199, 0, 0, 0.3);
+      // font-size: 36px;
+      font-size: 2.5vw;
+      z-index: 100;
+    }
+    .info {
+      // font-size: 16px;
+      font-size: 1.11vw;
+      margin-top: 8vh;
+      text-align: center;
+      color: #ffffff;
+      z-index: 100;
+      font-weight: 700;
+    }
+  }
+
+  .headerImg {
+    height: 50vw;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    background: url("./img/guoqi.svg") no-repeat;
+    background-size: cover;
+    background-position: top;
+    z-index: -1;
+    opacity: 0.4;
+    transform-origin: left center;
+    /* 应用飘动动画 */
+    animation: wave 6s ease-in-out infinite alternate;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.15) 25%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.08) 75%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background-size: 200% 100%;
+      animation: shine 4s linear infinite;
+    }
+  }
+  // /* 旗帜飘动动画 */
+  @keyframes wave {
+    0% {
+      transform: skewY(2deg) scaleY(0.99);
+    }
+    25% {
+      transform: skewY(-1deg) scaleY(1.01);
+    }
+    50% {
+      transform: skewY(1deg) scaleY(0.995);
+    }
+    75% {
+      transform: skewY(-0.5deg) scaleY(1.005);
+    }
+    100% {
+      transform: skewY(1.5deg) scaleY(0.99);
+    }
+  }
+
+  /* 旗帜流畅飘动动画 */
+  // @keyframes wave {
+  //   0%,
+  //   100% {
+  //     transform: skewY(1.8deg) scaleY(0.992) rotate(0.3deg);
+  //     animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  //   }
+  //   25% {
+  //     transform: skewY(-1.2deg) scaleY(1.005) rotate(-0.2deg);
+  //     animation-timing-function: cubic-bezier(0.3, 0.1, 0.5, 0.9);
+  //   }
+  //   50% {
+  //     transform: skewY(1.5deg) scaleY(0.998) rotate(0.1deg);
+  //     animation-timing-function: cubic-bezier(0.2, 0.2, 0.8, 0.8);
+  //   }
+  //   75% {
+  //     transform: skewY(-0.8deg) scaleY(1.003) rotate(-0.1deg);
+  //     animation-timing-function: cubic-bezier(0.5, 0.9, 0.7, 0.3);
+  //   }
+  // }
+
+  /* 光泽动画 */
+  @keyframes shine {
+    0% {
+      background-position: -200% 0;
+      // animation-timing-function: cubic-bezier(0.4, 0, 0.8, 0.4);
+    }
+    100% {
+      background-position: 200% 0;
+      // animation-timing-function: cubic-bezier(0.2, 0.6, 0.6, 1);
+    }
+  }
+
+  .footerImg {
+    position: absolute;
+    width: 100%;
+    height: 44px;
+    background: url("./img/footer-img.svg") no-repeat;
+    background-size: cover;
+    bottom: 0;
+    background-position: bottom;
+    z-index: 10;
+  }
+  .footerImg2 {
+    position: absolute;
+    // width: 654px; 45.42vw
+    width: 45.42vw;
+    height: 45.42vw;
+    // height: 654px;
+    background: url("./img/footer-img2.png") no-repeat;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-position: bottom;
+    margin: auto;
+    z-index: 5;
+  }
+
+  .bodyInfoWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 垂直居中 */
+    // overflow: hidden; /* 防止溢出内容显示 */
+    .bodyInfo {
+      height: 252px;
+      width: 100%;
+      min-width: 2500px;
+
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      transform-style: preserve-3d;
+      perspective: 1400px;
+      .platformCard {
+        width: 176px;
+        height: 252px;
+        position: relative;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+        color: #1c1618;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+        // box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        //  旋转中心
+        transform-origin: center center;
+
+        .cardBg {
+          position: absolute;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          background: url("./img/box-img.png") no-repeat;
+          background-size: cover;
+          opacity: 0.8;
+        }
+        &:hover {
+          .cardBg {
+            background: url("./img/box-img-red.png") no-repeat;
+            opacity: 1;
+          }
+        }
+        .smallCardBgRed {
+          position: absolute;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          background: url("./img/smallCardBgRed.png") no-repeat;
+          background-size: cover;
+          opacity: 1;
+        }
+        .bigCardBgRed {
+          position: absolute;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          background: url("./img/bigCardBgRed.png") no-repeat;
+          background-size: cover;
+          opacity: 1;
+        }
+        .iconImg {
+          // min-width: 93px;
+          // min-height: 93px;
+
+          margin-top: 82px;
+        }
+        .shadowBox {
+          width: 32px;
+          height: 6px;
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 50%; /* 让阴影呈椭圆/圆形扩散 */
+          filter: blur(4px);
+          margin-bottom: 16px;
+          // boxShadow: "0 10px 15px rgba(0, 0, 0, 0.2)",
+        }
+        &:hover {
+          .shadowBox {
+            /* 添加动画效果 */
+            animation: shadowPulse 2s infinite ease-in-out;
+          }
+          .iconImg {
+            animation: float 2s ease-in-out infinite;
+          }
+        }
+        /* 定义动画关键帧 */
+        @keyframes shadowPulse {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.3); /* 放大1.3倍 */
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+
+        /* 左侧三张卡片采用类似的旋转角度，增强层次感 */
+        &:nth-child(1) {
+          transform: rotateY(32deg) translate(323px, 0px) translateZ(-130px)
+            scaleX(1) scaleY(1);
+          scale: 1;
+        }
+        &:nth-child(2) {
+          transform: rotateY(22deg) translate(191px, 0px) translateZ(0px)
+            scaleX(1) scaleY(1.08);
+          scale: 1;
+        }
+        &:nth-child(3) {
+          transform: rotateY(32deg) translate(80px, 0px) translateZ(0px);
+          scale: 1;
+          .cardBg {
+            opacity: 1;
+          }
+          &:hover {
+            transform: rotateY(0deg) translate(120px, 0px) translateZ(50px);
+            scale: 1;
+          }
+        }
+        &:nth-child(4) {
+          transform: rotateY(32deg) translate(45px, 0px) translateZ(0px);
+          &:hover {
+            transform: rotateY(0deg) translate(60px, 0px) translateZ(50px);
+            scale: 1;
+          }
+        }
+        &:nth-child(5) {
+          transform: rotateY(32deg) translate(0px, 0px) translateZ(0px);
+          &:hover {
+            transform: rotateY(0deg) translateZ(0px);
+            scale: 1;
+          }
+        }
+
+        &:nth-child(6) {
+          scale: 0.97;
+          &:hover {
+            transform: rotateY(0deg) translateZ(0px);
+            scale: 1;
+          }
+        }
+
+        &:nth-child(7) {
+          transform: rotateY(-32deg) translate(0px, 0px) translateZ(0px);
+          &:hover {
+            transform: rotateY(0deg) translateZ(0px);
+            scale: 1;
+          }
+        }
+
+        &:nth-child(8) {
+          transform: rotateY(-32deg) translate(-45px, 0px) translateZ(0px);
+          &:hover {
+            transform: rotateY(0deg) translate(-60px, 0px) translateZ(50px);
+            scale: 1;
+          }
+        }
+
+        &:nth-child(9) {
+          scale: 1;
+          transform: rotateY(-32deg) translate(-80px, 0px) translateZ(0px);
+          .cardBg {
+            opacity: 1;
+          }
+          &:hover {
+            transform: rotateY(0deg) translate(-120px, 0px) translateZ(50px);
+            scale: 1;
+          }
+        }
+        &:nth-child(10) {
+          scale: 1;
+          transform: rotateY(-22deg) translate(-191px, 0px) translateZ(0px)
+            scaleX(1) scaleY(1.08);
+        }
+
+        &:nth-child(11) {
+          scale: 1;
+          transform: rotateY(-32deg) translate(-323px, 0px) translateZ(-130px)
+            scaleX(1) scaleY(1);
+        }
+      }
+    }
+  }
+}
+
+/* 超宽屏显示器（≥1920px） */
+@media (min-width: 1920px) {
+  /* 可增大卡片尺寸或间距 */
+}
+
+/* 标准大屏显示器（1440px - 1919px） */
+@media (min-width: 1440px) and (max-width: 2500px) {
+  /* 默认样式，无需调整 */
+  /* 适当缩小卡片或调整3D参数 */
+  .bodyInfo {
+    scale: 1.25;
+  }
+}
+
+/* 标准大屏显示器（1440px - 1919px） */
+@media (min-width: 2501px) and (max-width: 4500px) {
+  /* 默认样式，无需调整 */
+  /* 适当缩小卡片或调整3D参数 */
+  .bodyInfo {
+    scale: 1.5;
+  }
+}
